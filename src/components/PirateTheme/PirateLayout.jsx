@@ -181,8 +181,8 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
       </header>
 
       {/* MAIN PAGE CONTENT */}
-      <main className="flex-1 w-full min-w-0 bg-[#0b0806]">
-        <div className="w-full px-2 xs:px-3 sm:px-6 lg:px-8 pb-12 pt-3 sm:pt-5">
+      <main className="flex-1 w-full min-w-0 bg-[#0b0806] flex flex-col">
+        <div className={`w-full flex-1 flex flex-col ${currentPath === '/' || currentPath === '/map' ? 'px-0 py-0' : 'px-2 xs:px-3 sm:px-6 lg:px-8 pb-12 pt-3 sm:pt-5'}`}>
           {children}
         </div>
       </main>
