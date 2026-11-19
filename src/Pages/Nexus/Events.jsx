@@ -1,6 +1,6 @@
 import { driveAsset } from "../../constants/driveImages";
 
-// Import event photos from Google Drive
+// Event photos
 const robo1 = driveAsset("NexusPage/compressed_events/robo1.jpg");
 const robo2 = driveAsset("NexusPage/compressed_events/robo2.jpg");
 const robo3 = driveAsset("NexusPage/compressed_events/robo3.jpg");
@@ -29,49 +29,50 @@ const jwg1 = driveAsset("NexusPage/compressed_events/jwg1.jpg");
 const jwg2 = driveAsset("NexusPage/compressed_events/jwg2.jpg");
 const jwg3 = driveAsset("NexusPage/compressed_events/jwg3.jpg");
 
-// Sample data for the events
+// New Nexus Events Data
 const events = [
   {
-    name: "Nexus Got Latent",
+    name: "Nexus Model",
     description:
-      "Nexus Got Latent, the ultimate talent hunt of Nexus 2024, was a spectacular showcase of creativity and humor. From hilarious stand-up comedy to spot-on mimicry and other captivating acts, participants left the crowd in splits and awe. The event was a complete entertainment package, blending laughter, talent, and pure fun. With every performance, the stage came alive, making Nexus Got Latent an unforgettable highlight of the fest and a true celebration of diverse talents!",
+      "Step into the spotlight with Nexus Model, where raw, unfiltered talent meets brutally honest comedy and peak entertainment! Inspired by the viral Latent format, this high-voltage stage showdown lets you showcase any quirky skill, hidden talent, stand-up bit, or bizarre party trick you have up your sleeve. Perform in front of a sharp-witted panel and a roaring crowd, where charisma, comedic timing, and pure stage presence matter just as much as the act itself. Predict your own score before the judges drop theirs—because matching the panel’s vibe is the ultimate key to stealing the show. Whether you leave the audience in splits, stunned in silence, or cheering on their feet, every second on this mic is pure unscripted chaos. Step up, own the stage, and prove you have got that unmistakable spark!",
     photos: [latent1, latent2, latent3],
   },
   {
-    name: "Perfect Pixel",
-    description: "In Nexus 2024, Perfect Pixel, the photography event showcased the creative flair of participants as they beautifully captured the essence of the fest. From candid moments to vibrant scenes, every frame told a unique story. This event celebrated the art of photography, bringing out the magic of Nexus through captivating visuals. With lenses focused and imaginations unleashed, Perfect Pixel was a canvas where creativity met celebration!",
+    name: "Crypt Hunt",
+    description:
+      "Dive into the ultimate digital labyrinth with Crypt Hunt, an adrenaline-pumping online treasure hunt built to test your lateral thinking, tech instincts, and sheer persistence! Forget conventional maps—here, your clues are hidden inside cryptic riddles, source codes, ciphered messages, audio files, and obscure corners of the internet. Every solved puzzle unlocks the next level, pulling you deeper into a race against the clock where one sharp observation separates a dead end from a breakthrough. Connect seemingly random dots, decode hidden patterns, and outsmart red herrings as the difficulty ramps up with every stage. Whether you are a master decoder, a Google-fu wizard, or someone who loves cracking impossible mysteries, this high-stakes hunt will keep your brain firing on all cylinders. Put on your detective hat, trust your instincts, and race to uncover the final secret!",
     photos: [perfectpixel1, perfectpixel2, perfectpixel3],
-  },
-  {
-    name: "Decoduino",
-    description: "Nexus'24 in collaboration with Team Innoreva organized Decoduino which was an IoT-based challenge. The competition featured three exciting rounds: the ultimate IoT Quiz Challenge that tested the foundational knowledge of IoT, the Implementation Round, where teams developed practical IoT-based solutions and the grand finale 'Decoding Challenge', where finalists used Arduino Uno to decode signals, with speed and accuracy determining the winners. The event showcased participants problem-solving abilities and technical knowledge, inspiring them to explore and excel in the field of electronics.",
-    photos: [decodino1, decodino2, decodino3],
   },
   {
     name: "CodeNexus",
     description:
-      "On October 18th, Nexus 2024 hosted CodeNexus, an exhilarating coding event on the Unstop platform. Participants showcased their critical thinking and problem-solving prowess, tackling challenging problems with precision and creativity. The competition was a thrilling test of logical ability, pushing coders to think outside the box. CodeNexus celebrated the spirit of technology and intellect, making itself the ultimate coding showdown.",
+      "Step into the digital battleground with CodeNexus, the ultimate test of raw logic, speed, and algorithmic mastery. If you thrive under the ticking clock and love breaking down complex problems into clean, efficient code, this is your stage to shine. Hosted on the GeeksforGeeks platform, this high-energy online showdown challenges you to conquer six carefully curated problems spanning easy warm-ups to brain-twisting hard levels—all within a razor-sharp two-hour window. Every line of code counts as you race against time to optimize your logic, squash edge cases, and outpace the competition. Whether you are sharpening your competitive programming edge or proving your problem-solving dominance, CodeNexus puts your reflexes and syntax to the ultimate test. Fire up your IDE, lock in your focus, and show what your code can really do.",
     photos: [coden1, coden2, coden3],
   },
   {
-    name: "Jab We Guess",
+    name: "TraceBot",
     description:
-      "Jab We Guess was a lively and engaging competition of Nexus'24 that saw enthusiastic participation from students across all years and departments. Teams competed in two thrilling rounds: in the first round, participants showcased their creativity through quick doodles while in the second they unleashed their acting skills by expressing movie scenes as their teammates tried to guess the movie. The atmosphere was filled with excitement, laughter, and competitive spirit as participants raced against time to outperform each other.",
-    photos: [ jwg2, jwg3, jwg1],
-  },
-  {
-    name: "Robotics Renaissance",
-    description:
-      "In Nexus 2024, Robotics Renaissance, the ultimate line-tracing bot challenge, brought together innovation and engineering prowess. Teams designed and built autonomous robots to navigate a designated track with precision and speed. Every second counted as bots raced against time, facing strict penalties for deviations. This electrifying event, held in collaboration with OJASS’25, celebrated the fusion of creativity and technology, pushing participants to their limits. With circuits buzzing and strategies unfolding, Robotics Renaissance was a testament to the brilliance of automation and design!",
+      "Bring raw robotics engineering to life with TraceBot, the ultimate showdown of sensor precision, control algorithms, and autonomous navigation. Your mission is to build a self-navigating machine from scratch capable of locking onto a track packed with smooth curves, sudden turns, and deceptive line breaks. With zero remote intervention allowed once the start switch is flipped, your bot must think entirely on its own—clearing sequential checkpoints and racing against a tight clock to reach the finish zone. Every millisecond and calibration tweak counts as you balance blistering speed with rock-solid control logic to stay on course without losing your bearings. Top off your run by triggering a glowing finish-line LED to prove complete autonomous mastery from start to finish.",
     photos: [robo1, robo2, robo3],
   },
   {
-    name: "Dare 2 Pair",
+    name: "FacePainting",
     description:
-      "DARE 2 PAIR at Nexus’24 was a great success as it brought participants together in a vibrant celebration of teamwork and chemistry. From testing connections with musical tuning in the first round to Paper Dance in the second while the final round stole the show as participants recreated iconic movie scenes. Altogether the event was packed with laughter, drama, and unforgettable moments, leaving everyone with cherished memories.",
+      "Trade circuit boards for paintbrushes in Face Painting, where raw creativity meets bold artistic expression! Step away from the screens and soldering irons to turn a blank canvas into a vibrant, living masterpiece bursting with colour, imagination, and storytelling. Whether you go for intricate cyber-futuristic patterns, dramatic illusions, or expressive pop-art strokes, every brushstroke is a race against the clock to bring your vision to life. Watch bold hues blend into striking details as you capture themes with precision, flair, and unmistakable originality. No experience is needed—just a steady hand, wild ideas, and the courage to wear your art loud and proud. Grab your palette, unleash your inner artist, and make heads turn across the fest!",
+    photos: [jwg1, jwg2, jwg3],
+  },
+  {
+    name: "URBAN-NXT",
+    description:
+      "Modern cities are grappling with gridlock, energy waste, and strained infrastructure—and UrbanNXT puts you in the driver's seat to engineer the fix. Step into an arena built for innovators ready to reimagine metropolitan ecosystems from the ground up. In the opening round, you will dissect a pressing urban crisis in a sharp diagnosis before unveiling a bold preliminary solution in a single high-impact slide. Advance to the finale, and you will pitch a comprehensive, tech-driven solution directly before an expert jury. Whether your edge lies in IoT, Embedded Systems, AI/ML, VLSI, or Web/App Development, this is where hardware and code meet real-world civic transformation. Step up, out-engineer the chaos, and prove your blueprint is what the cities of tomorrow actually run on.",
+    photos: [decodino1, decodino2, decodino3],
+  },
+  {
+    name: "Photo Link",
+    description:
+      "Step into the speed-of-light arena with PhotoLink, where electronics, communication theory, and optical physics collide. If you are fascinated by how raw signals travel through light, this is your chance to turn classroom theory into hands-on hardware mastery. The challenge kicks off with an intense quiz designed to test your sharp grasp of core electronics fundamentals and optical principles. Clear the first hurdle, and you will unlock the real hardware playground: working directly with an IR Transmitter-Receiver module and an optical patch cord. Your mission is to engineer clean optical pathways, encode a binary message, and decode it with absolute precision under pressure. Step up to the optical bench, align your signals, and prove you have what it takes to master modern photonic communication.",
     photos: [pairup1, pairup2, pairup3],
   },
 ];
 
-// Exporting the events array for use in other components
 export default events;
