@@ -2,34 +2,19 @@
  * MobileNavBar — Bottom Tab Navigation for Mobile
  * 
  * This component renders a native-feel bottom navigation bar visible only
- * on small screens (lg and below). It provides thumb-friendly navigation
- * between the most common pages.
- *
- * Design principles:
- * - Matches the SECE pirate/nautical dark theme
- * - Touch targets >= 44px for accessibility
- * - Active tab highlighted with golden accent
- * - Safe area inset padding for devices with home indicator
- * - Smooth opacity fade on scroll (hides when scrolling down, shows on up)
+ * on small screens. It provides thumb-friendly navigation
+ * between Map, Nexus, and Events.
  */
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  FaHome,
-  FaCalendarAlt,
-  FaUsers,
-  FaIdBadge,
-} from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import { ShipWheelIcon, CrossedSwordsIcon } from "../components/PirateTheme/PirateIcons";
 
 const TAB_ITEMS = [
   { name: "Map", path: "/", icon: "ship" },
-  { name: "Home", path: "/home", icon: "home" },
-  { name: "Events", path: "/events", icon: "calendar" },
   { name: "Nexus", path: "/nexus", icon: "nexus" },
-  { name: "Team", path: "/team", icon: "users" },
-  { name: "More", path: "/alumni", icon: "badge", isMore: true },
+  { name: "Events", path: "/events", icon: "calendar" },
 ];
 
 const TabIcon = ({ icon, active }) => {
@@ -41,16 +26,10 @@ const TabIcon = ({ icon, active }) => {
       return <ShipWheelIcon className="w-5 h-5" color={color} />;
     case "nexus":
       return <CrossedSwordsIcon className="w-5 h-5" color={color} />;
-    case "home":
-      return <FaHome size={size} color={color} />;
     case "calendar":
       return <FaCalendarAlt size={size} color={color} />;
-    case "users":
-      return <FaUsers size={size} color={color} />;
-    case "badge":
-      return <FaIdBadge size={size} color={color} />;
     default:
-      return <FaHome size={size} color={color} />;
+      return <ShipWheelIcon className="w-5 h-5" color={color} />;
   }
 };
 
@@ -65,10 +44,6 @@ const MobileNavBar = () => {
   const isActive = (item) => {
     const p = location.pathname;
     if (item.path === "/" && (p === "/" || p === "/map")) return true;
-    if (item.isMore) {
-      // "More" tab is active for alumni and placement_masterclass
-      return p === "/alumni" || p === "/placement_masterclass";
-    }
     return item.path !== "/" && p.startsWith(item.path);
   };
 
@@ -77,13 +52,13 @@ const MobileNavBar = () => {
       {/* Spacer to prevent content being hidden behind fixed bottom nav */}
       <div className="lg:hidden h-[64px]" aria-hidden="true" />
 
-      {/* Bottom Nav Bar */}
+      {/* Bottom Nav Bar (Solid Opaque, No Transparency) */}
       <nav
         className="
-          fixed bottom-0 left-0 right-0 z-50 lg:hidden
-          bg-[#110c08]/98 backdrop-blur-md
+          fixed bottom-0 left-0 right-0 z-40 lg:hidden
+          bg-[#110c08]
           border-t border-[#3d2c1c]
-          shadow-[0_-4px_20px_rgba(0,0,0,0.6)]
+          shadow-[0_-4px_20px_rgba(0,0,0,0.8)]
         "
         style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
         aria-label="Bottom navigation"
@@ -94,7 +69,7 @@ const MobileNavBar = () => {
             return (
               <Link
                 key={item.name}
-                to={item.isMore ? "/alumni" : item.path}
+                to={item.path}
                 className={`
                   flex flex-col items-center justify-center flex-1 min-w-0
                   py-1 px-0.5 gap-0.5 relative
@@ -115,7 +90,7 @@ const MobileNavBar = () => {
                 <TabIcon icon={item.icon} active={active} />
 
                 <span
-                  className={`text-[9px] font-cinzel font-semibold tracking-wide leading-tight text-center truncate w-full ${
+                  className={`text-[10px] font-cinzel font-semibold tracking-wide leading-tight text-center truncate w-full ${
                     active ? "text-[#f7cd78]" : "text-[#7a6a55]"
                   }`}
                 >
