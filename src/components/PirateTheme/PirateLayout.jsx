@@ -148,7 +148,7 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
           </div>
         </div>
 
-        {/* SIDEBAR OVERLAY (~Half screen width, dark backdrop) */}
+        {/* SIDEBAR OVERLAY (~Half screen width, dark backdrop, no back button) */}
         {mobileOpen && (
           <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex justify-start animate-fade-in">
             <div className="w-4/5 xs:w-3/5 sm:w-1/2 max-w-md h-full bg-[#0e0a07] border-r border-[#3d2c1c] flex flex-col p-6 overflow-y-auto shadow-2xl">
@@ -189,21 +189,8 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
                 })}
               </nav>
 
-              {/* Bottom Section with Close Button at Bottom Left & Social Links */}
+              {/* Bottom Section with Social Links */}
               <div className="mt-auto pt-6 border-t border-[#3d2c1c] flex flex-col gap-5">
-                <div className="flex items-center justify-start">
-                  {/* Close button at bottom left */}
-                  <button
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1a130b] border border-[#523d26] text-[#e8c782] cursor-pointer text-sm font-cinzel"
-                    aria-label="Close menu"
-                  >
-                    <FaTimes size={16} />
-                    <span>Close</span>
-                  </button>
-                </div>
-
-                {/* Social Links */}
                 <div className="flex items-center justify-center gap-6 pt-1">
                   <a href="https://www.youtube.com/@sece_nitjsr" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
                     <FaYoutube size={20} />
