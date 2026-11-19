@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PirateLayout from "../../components/PirateTheme/PirateLayout";
 import { driveAsset } from "../../constants/driveImages";
@@ -77,21 +77,101 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [activeIsland, setActiveIsland] = useState(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const touchDistRef = useRef(null);
 
   const handlePinClick = (pin) => {
     navigate(pin.path);
   };
 
   const zoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 0.25, 1.75));
+    setZoomLevel((prev) => {
+      const next = Math.min(prev + 0.25, 2.5);
+      if (next === 1) setPan({ x: 0, y: 0 });
+      return next;
+    });
   };
 
   const zoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.25, 1));
+    setZoomLevel((prev) => {
+      const next = Math.max(prev - 0.25, 1);
+      if (next === 1) setPan({ x: 0, y: 0 });
+      return next;
+    });
   };
 
   const resetZoom = () => {
     setZoomLevel(1);
+    setPan({ x: 0, y: 0 });
+  };
+
+  // Mouse drag handlers for panning
+  const handleMouseDown = (e) => {
+    if (zoomLevel <= 1) return;
+    setIsDragging(true);
+    setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || zoomLevel <= 1) return;
+    setPan({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y,
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Touch / Pinch & Pan handlers
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      touchDistRef.current = { dist, zoom: zoomLevel };
+    } else if (e.touches.length === 1 && zoomLevel > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.touches[0].clientX - pan.x, y: e.touches[0].clientY - pan.y });
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 2 && touchDistRef.current) {
+      const newDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const scaleFactor = newDist / touchDistRef.current.dist;
+      const newZoom = Math.min(Math.max(touchDistRef.current.zoom * scaleFactor, 1), 2.5);
+      setZoomLevel(newZoom);
+      if (newZoom === 1) setPan({ x: 0, y: 0 });
+    } else if (e.touches.length === 1 && isDragging && zoomLevel > 1) {
+      setPan({
+        x: e.touches[0].clientX - dragStart.x,
+        y: e.touches[0].clientY - dragStart.y,
+      });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    touchDistRef.current = null;
+  };
+
+  // Wheel zoom handler
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const delta = e.deltaY < 0 ? 0.2 : -0.2;
+    setZoomLevel((prev) => {
+      const next = Math.min(Math.max(prev + delta, 1), 2.5);
+      if (next === 1) setPan({ x: 0, y: 0 });
+      return next;
+    });
   };
 
   return (
@@ -146,7 +226,7 @@ const HomePage = () => {
 
               <button
                 onClick={zoomIn}
-                disabled={zoomLevel >= 1.75}
+                disabled={zoomLevel >= 2.5}
                 className="w-7 h-7 flex items-center justify-center rounded text-[#d6c4ac] hover:text-[#f5ca73] hover:bg-[#20150b] disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-[#d6c4ac] transition-all cursor-pointer focus:outline-none"
                 title="Zoom In"
                 aria-label="Zoom In"
@@ -173,19 +253,24 @@ const HomePage = () => {
         <div className="relative w-full max-w-2xl mx-auto p-[3px] rounded-2xl bg-gradient-to-b from-[#8a632c] via-[#2a1a0b] to-[#8a632c] shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(156,115,51,0.18)] transition-all duration-300 overflow-hidden">
 
           <div
-            className={`w-full rounded-[13px] bg-[#0c0906] select-none scrollbar-thin ${
-              zoomLevel > 1
-                ? "overflow-auto touch-pan-x touch-pan-y"
-                : "overflow-hidden touch-pan-y"
-            }`}
+            className="w-full rounded-[13px] bg-[#0c0906] select-none overflow-hidden touch-none"
           >
 
             <div
-              className="relative w-full aspect-[576/1024] min-w-[320px] transition-transform duration-300 ease-out origin-top-left"
+              className={`relative w-full aspect-[576/1024] min-w-[320px] transition-transform duration-75 ease-out origin-center ${
+                zoomLevel > 1 ? "cursor-grab active:cursor-grabbing" : ""
+              }`}
               style={{
-                transform: `scale(${zoomLevel})`,
-                width: zoomLevel > 1 ? `${zoomLevel * 100}%` : "100%",
+                transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,
               }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onWheel={handleWheel}
             >
 
               {/* Main Map Image (Vertical Map) */}
