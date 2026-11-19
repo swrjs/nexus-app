@@ -174,10 +174,10 @@ const HomePage = () => {
 
   return (
     <PirateLayout activeNav="Map">
-      <div className="w-full h-full flex-1 flex flex-col relative overflow-hidden select-none bg-[#0a0705]">
+      <div className="w-full min-h-screen flex flex-col items-center relative select-none bg-[#0a0705] py-2 sm:py-4 px-2 sm:px-4">
 
         {/* Floating Zoom Controls Widget */}
-        <div className="absolute top-3 right-3 z-30 flex items-center bg-[#100b07]/90 backdrop-blur-md border border-[#523d26] rounded-xl p-1 shadow-[0_8px_20px_rgba(0,0,0,0.8)]">
+        <div className="fixed top-20 right-4 z-30 flex items-center bg-[#100b07]/90 backdrop-blur-md border border-[#523d26] rounded-xl p-1 shadow-[0_8px_20px_rgba(0,0,0,0.8)]">
           <button
             onClick={zoomOut}
             disabled={zoomLevel <= 1}
@@ -214,10 +214,10 @@ const HomePage = () => {
           )}
         </div>
 
-        {/* Fullscreen Map Canvas */}
-        <div className="w-full flex-1 relative overflow-hidden touch-none flex items-center justify-center bg-[#0a0705]">
+        {/* Scrollable Map Container */}
+        <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] my-2">
           <div
-            className={`relative w-full h-full max-w-4xl aspect-[576/1024] transition-transform duration-75 ease-out origin-center ${
+            className={`relative w-full aspect-[576/1024] bg-[#0a0705] transition-transform duration-75 ease-out origin-center ${
               zoomLevel > 1 ? "cursor-grab active:cursor-grabbing" : ""
             }`}
             style={{
@@ -239,6 +239,14 @@ const HomePage = () => {
               alt="SECE Treasure Map - Different Islands Same Crew Bigger Dreams"
               className="w-full h-full object-cover object-center select-none pointer-events-none"
               style={{ imageRendering: "-webkit-optimize-contrast" }}
+            />
+
+            {/* Perimeter Vignette */}
+            <div
+              className="absolute inset-0 pointer-events-none rounded-2xl z-10"
+              style={{
+                boxShadow: "inset 0 0 24px 3px rgba(12, 9, 6, 0.35)",
+              }}
             />
 
             {/* SVG Sailing Routes */}

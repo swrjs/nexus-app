@@ -148,7 +148,7 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
           </div>
         </div>
 
-        {/* SIDEBAR OVERLAY (Covers ~half screen, darkens background) */}
+        {/* SIDEBAR OVERLAY (~Half screen width, dark backdrop) */}
         {mobileOpen && (
           <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex justify-start animate-fade-in">
             <div className="w-4/5 xs:w-3/5 sm:w-1/2 max-w-md h-full bg-[#0e0a07] border-r border-[#3d2c1c] flex flex-col p-6 overflow-y-auto shadow-2xl">
@@ -157,20 +157,13 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
                 <div className="flex items-center gap-2.5">
                   <ShipWheelIcon className="w-8 h-8" color="#d4af37" />
                   <span className="font-cinzel font-extrabold text-xl text-[#f0cb79]">
-                    SECE Navigation
+                    SECE
                   </span>
                 </div>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#1a130b] border border-[#523d26] text-[#e8c782] cursor-pointer"
-                  aria-label="Close menu"
-                >
-                  <FaTimes size={18} />
-                </button>
               </div>
 
-              {/* Vertical Tabs */}
-              <nav className="flex flex-col gap-3 py-6">
+              {/* Vertical Tabs (No borders around text) */}
+              <nav className="flex flex-col gap-2 py-4">
                 {NAV_ITEMS.map((item) => {
                   const active = isItemActive(item);
                   const Icon = item.icon;
@@ -179,10 +172,10 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
                       key={item.name}
                       to={item.path}
                       onClick={() => setMobileOpen(false)}
-                      className={`flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-cinzel font-semibold transition-all duration-200 ${
+                      className={`flex items-center gap-3.5 px-4 py-3 rounded-lg text-base font-cinzel font-semibold transition-all duration-200 ${
                         active
-                          ? "bg-[#2a1c10] border border-[#a67c38] text-[#f7cd78]"
-                          : "bg-[#140e08] border border-[#3d2c1c] text-[#c2af94] hover:text-[#f3d48d] hover:bg-[#1c130b]"
+                          ? "bg-[#2a1c10] text-[#f7cd78]"
+                          : "text-[#c2af94] hover:text-[#f3d48d] hover:bg-[#18110b]"
                       }`}
                     >
                       {Icon === ShipWheelIcon || Icon === CrossedSwordsIcon ? (
@@ -196,23 +189,38 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
                 })}
               </nav>
 
-              {/* Social Links at Bottom of Sidebar */}
-              <div className="mt-auto pt-6 border-t border-[#3d2c1c] flex items-center justify-center gap-6">
-                <a href="https://www.youtube.com/@sece_nitjsr" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                  <FaYoutube size={22} />
-                </a>
-                <a href="https://www.linkedin.com/company/society-of-electronics-and-communication-engineering-nit-jamshedpur/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                  <FaLinkedinIn size={22} />
-                </a>
-                <a href="https://www.facebook.com/sece.nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                  <FaFacebookF size={22} />
-                </a>
-                <a href="https://www.instagram.com/sece_nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                  <FaInstagram size={22} />
-                </a>
-                <a href="mailto:sece.student@nitjsr.ac.in" className="text-[#ab9475] hover:text-[#f5c767]">
-                  <FaEnvelope size={22} />
-                </a>
+              {/* Bottom Section with Close Button at Bottom Left & Social Links */}
+              <div className="mt-auto pt-6 border-t border-[#3d2c1c] flex flex-col gap-5">
+                <div className="flex items-center justify-start">
+                  {/* Close button at bottom left */}
+                  <button
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1a130b] border border-[#523d26] text-[#e8c782] cursor-pointer text-sm font-cinzel"
+                    aria-label="Close menu"
+                  >
+                    <FaTimes size={16} />
+                    <span>Close</span>
+                  </button>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex items-center justify-center gap-6 pt-1">
+                  <a href="https://www.youtube.com/@sece_nitjsr" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                    <FaYoutube size={20} />
+                  </a>
+                  <a href="https://www.linkedin.com/company/society-of-electronics-and-communication-engineering-nit-jamshedpur/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                    <FaLinkedinIn size={20} />
+                  </a>
+                  <a href="https://www.facebook.com/sece.nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                    <FaFacebookF size={20} />
+                  </a>
+                  <a href="https://www.instagram.com/sece_nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                    <FaInstagram size={20} />
+                  </a>
+                  <a href="mailto:sece.student@nitjsr.ac.in" className="text-[#ab9475] hover:text-[#f5c767]">
+                    <FaEnvelope size={20} />
+                  </a>
+                </div>
               </div>
             </div>
             {/* Click outside to close */}
