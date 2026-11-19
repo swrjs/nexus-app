@@ -56,28 +56,9 @@ const TabIcon = ({ icon, active }) => {
 
 const MobileNavBar = () => {
   const location = useLocation();
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
-
-  // Hide nav bar on scroll down, show on scroll up
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY > lastScrollY.current + 10) {
-        setVisible(false);
-      } else if (currentY < lastScrollY.current - 5) {
-        setVisible(true);
-      }
-      lastScrollY.current = currentY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Always show on route change
   useEffect(() => {
-    setVisible(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
@@ -98,14 +79,12 @@ const MobileNavBar = () => {
 
       {/* Bottom Nav Bar */}
       <nav
-        className={`
+        className="
           fixed bottom-0 left-0 right-0 z-50 lg:hidden
           bg-[#110c08]/98 backdrop-blur-md
           border-t border-[#3d2c1c]
           shadow-[0_-4px_20px_rgba(0,0,0,0.6)]
-          transition-transform duration-300 ease-in-out
-          ${visible ? "translate-y-0" : "translate-y-full"}
-        `}
+        "
         style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
         aria-label="Bottom navigation"
       >
