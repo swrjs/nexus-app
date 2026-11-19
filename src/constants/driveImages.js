@@ -1,7 +1,7 @@
 /**
  * JSDelivr GitHub-Backed CDN Asset Resolution
  * Automatically serves all cloud assets reliably via a fast global CDN
- * without bloating the Android APK size.
+ * while keeping only the map burned in locally to minimize app/APK size.
  */
 
 const GITHUB_CDN_BASE = "https://cdn.jsdelivr.net/gh/swrjs/nexus-app@main/src/resources";
@@ -27,18 +27,12 @@ export const driveAsset = (assetPath) => {
     .replace(/^assets\//, '')
     .replace(/^\/+/, '');
 
-  // Keep map burned in locally
+  // Keep ONLY the map burned in locally
   if (cleanPath === 'nexus-pirate-map.png' || cleanPath === 'mapvertical.png' || cleanPath.toLowerCase().includes('map')) {
     return '/mapvertical.png';
   }
 
-  // Serve gallery2025 locally
-  if (cleanPath.toLowerCase().includes('gallery2025')) {
-    const subPath = cleanPath.replace(/^resources\//, '');
-    return `/resources/${subPath}`;
-  }
-
-  // Serve all other photos/resources from JSDelivr global CDN backed by GitHub
+  // Serve gallery2025, members, events, and all other resources from JSDelivr global CDN
   return `${GITHUB_CDN_BASE}/${cleanPath}`;
 };
 
