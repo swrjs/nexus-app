@@ -188,17 +188,12 @@ const HomePage = () => {
               }}
             >
 
-              {/* Main Map Image (Vertical Map Attached) */}
+              {/* Main Map Image (Vertical Map) */}
               <img
-                src="https://chatgpt.com/get-image/... / or user attached image URL"
+                src={driveAsset("nexus-pirate-map.png")}
                 alt="SECE Treasure Map - Different Islands Same Crew Bigger Dreams"
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
                 style={{ imageRendering: "-webkit-optimize-contrast" }}
-                onError={(e) => {
-                  // Fallback to driveAsset if direct URL fails
-                  e.target.onerror = null;
-                  e.target.src = driveAsset("nexus-pirate-map.png");
-                }}
               />
 
               {/* Perimeter Vignette */}

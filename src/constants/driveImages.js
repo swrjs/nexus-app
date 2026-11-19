@@ -1795,9 +1795,9 @@ export const DRIVE_IMAGES = {
     filename: "nexus-photo2.jpg",
   },
   "nexus-pirate-map.png": {
-    id: "1JSGK3_HXuW22yv0IvQBDT30rdKJ5S2vx",
-    viewUrl: "https://drive.google.com/file/d/1JSGK3_HXuW22yv0IvQBDT30rdKJ5S2vx/view?usp=drivesdk",
-    directUrl: "https://lh3.googleusercontent.com/d/1JSGK3_HXuW22yv0IvQBDT30rdKJ5S2vx",
+    id: "vertical-map",
+    viewUrl: "",
+    directUrl: "https://chatgpt.com/backend-api/files/file_service_000000000000000000000000",
     filename: "nexus-pirate-map.png",
   },
   "pirate_theme/alumni_original.jpg": {
