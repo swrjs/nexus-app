@@ -25,7 +25,7 @@ const photo1 = driveAsset("NexusPage/gallery2025/photolink1.jpeg");
 const photo2 = driveAsset("NexusPage/gallery2025/photolink 2.JPG.jpeg");
 const photo3 = driveAsset("NexusPage/gallery2025/photolink3.jpeg");
 
-// New Nexus Events Data with updated gallery 2025 photos
+// New Nexus Events Data (CodeNexus removed, Crypt Hunt 2nd image replaced with 1st image)
 const events = [
   {
     name: "Nexus Model",
@@ -37,13 +37,7 @@ const events = [
     name: "Crypt Hunt",
     description:
       "Dive into the ultimate digital labyrinth with Crypt Hunt, an adrenaline-pumping online treasure hunt built to test your lateral thinking, tech instincts, and sheer persistence! Forget conventional maps—here, your clues are hidden inside cryptic riddles, source codes, ciphered messages, audio files, and obscure corners of the internet. Every solved puzzle unlocks the next level, pulling you deeper into a race against the clock where one sharp observation separates a dead end from a breakthrough. Connect seemingly random dots, decode hidden patterns, and outsmart red herrings as the difficulty ramps up with every stage. Whether you are a master decoder, a Google-fu wizard, or someone who loves cracking impossible mysteries, this high-stakes hunt will keep your brain firing on all cylinders. Put on your detective hat, trust your instincts, and race to uncover the final secret!",
-    photos: [crypt1, crypt2, crypt3],
-  },
-  {
-    name: "CodeNexus",
-    description:
-      "Step into the digital battleground with CodeNexus, the ultimate test of raw logic, speed, and algorithmic mastery. If you thrive under the ticking clock and love breaking down complex problems into clean, efficient code, this is your stage to shine. Hosted on the GeeksforGeeks platform, this high-energy online showdown challenges you to conquer six carefully curated problems spanning easy warm-ups to brain-twisting hard levels—all within a razor-sharp two-hour window. Every line of code counts as you race against time to optimize your logic, squash edge cases, and outpace the competition. Whether you are sharpening your competitive programming edge or proving your problem-solving dominance, CodeNexus puts your reflexes and syntax to the ultimate test. Fire up your IDE, lock in your focus, and show what your code can really do.",
-    photos: [crypt2, crypt1, crypt3],
+    photos: [crypt1, crypt1, crypt3],
   },
   {
     name: "TraceBot",
