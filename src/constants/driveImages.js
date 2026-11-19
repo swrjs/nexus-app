@@ -45,6 +45,7 @@ Object.keys(DRIVE_IMAGES).forEach((key) => {
 
 export const driveAsset = (assetPath) => {
   if (!assetPath) return '';
+  if (assetPath.startsWith('/') || assetPath.startsWith('http')) return assetPath;
   const cleanPath = assetPath
     .replace(/\\/g, '/')
     .replace(/^(\.\.\/)+assets\//, '')
@@ -54,23 +55,21 @@ export const driveAsset = (assetPath) => {
   if (cleanPath === 'nexus-pirate-map.png' || cleanPath === 'mapvertical.png' || cleanPath.toLowerCase().includes('map')) {
     return '/mapvertical.png';
   }
-  if (cleanPath.startsWith('pirate_theme/') || cleanPath.startsWith('resources/pirate_theme/')) {
-    return '/resources/' + cleanPath.replace(/^resources\//, '');
-  }
-  if (cleanPath.startsWith('placement_masterclass/batch_26/') || cleanPath.startsWith('placement_masterclass/company_logo/') || cleanPath.startsWith('resources/placement_masterclass/')) {
-    return '/resources/' + cleanPath.replace(/^resources\//, '');
+
+  // Check lookup
+  const norm = cleanPath.toLowerCase();
+  if (NORMALIZED_LOOKUP[norm]) {
+    return NORMALIZED_LOOKUP[norm];
   }
 
-  if (NORMALIZED_LOOKUP[cleanPath.toLowerCase()]) {
-    return NORMALIZED_LOOKUP[cleanPath.toLowerCase()];
+  for (const [k, url] of Object.entries(NORMALIZED_LOOKUP)) {
+    if (k.endsWith(norm) || norm.endsWith(k)) {
+      return url;
+    }
   }
 
-  const match = cleanPath.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if (match) {
-    return `https://lh3.googleusercontent.com/d/${match[1]}`;
-  }
-
-  return assetPath.startsWith('/') ? assetPath : `https://lh3.googleusercontent.com/d/${cleanPath}`;
+  // Fallback to getDriveImageUrl which formats Google Drive IDs/URLs correctly
+  return getDriveImageUrl(cleanPath);
 };
 
 export default driveAsset;
