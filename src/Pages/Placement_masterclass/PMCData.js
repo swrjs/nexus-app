@@ -1,5 +1,20 @@
 import { driveAsset } from '../../constants/driveImages';
 
+//batch26
+const p26_1 = driveAsset('placement_masterclass/batch_26/1794819174752.jpg');
+const p26_2 = driveAsset('placement_masterclass/batch_26/1794215442354.jpg');
+const p26_3 = driveAsset('placement_masterclass/batch_26/1789367619332.jpg');
+const p26_4 = driveAsset('placement_masterclass/batch_26/1789964351609.jpg');
+const p26_5 = driveAsset('placement_masterclass/batch_26/1790583463713.jpg');
+const p26_6 = driveAsset('placement_masterclass/batch_26/1792390495435.jpg');
+const p26_7 = driveAsset('placement_masterclass/batch_26/1792993222416.jpg');
+const p26_8 = driveAsset('placement_masterclass/batch_26/1793603918239.jpg');
+
+const visa = driveAsset('placement_masterclass/company_logo/visa.png');
+const tekion = driveAsset('placement_masterclass/company_logo/tekion.png');
+const bny = driveAsset('placement_masterclass/company_logo/bny_mellon.jpg');
+const optum = driveAsset('placement_masterclass/company_logo/optum.jpg');
+
 //batch25
 const png1 = driveAsset('placement_masterclass/batch_25/1.png');
 const png2 = driveAsset('placement_masterclass/batch_25/2.png');
@@ -77,10 +92,64 @@ const nmtronics = driveAsset('placement_masterclass/company_logo/nmtronics.png')
 const logic = driveAsset('placement_masterclass/company_logo/logic.png');
 const gehealthcare = driveAsset('placement_masterclass/company_logo/ge-healthcare.png');
 const ubs = driveAsset('placement_masterclass/company_logo/ubs.jpg');
-// import logic from '../../assets/placement_masterclass/company_logo/logic.png';
-
 
 export const PMCData = [
+    {
+        name: "Placement Achiever 1",
+        image: p26_1,
+        logo: visa,
+        pmc: p26_1,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 2",
+        image: p26_2,
+        logo: tekion,
+        pmc: p26_2,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 3",
+        image: p26_3,
+        logo: bny,
+        pmc: p26_3,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 4",
+        image: p26_4,
+        logo: optum,
+        pmc: p26_4,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 5",
+        image: p26_5,
+        logo: amazon,
+        pmc: p26_5,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 6",
+        image: p26_6,
+        logo: atlassian,
+        pmc: p26_6,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 7",
+        image: p26_7,
+        logo: Qualcomm,
+        pmc: p26_7,
+        batch: 26
+    },
+    {
+        name: "Placement Achiever 8",
+        image: p26_8,
+        logo: oracle,
+        pmc: p26_8,
+        batch: 26
+    },
 
     {
         name: "Ashish Satpathy",
@@ -139,131 +208,130 @@ export const PMCData = [
         batch: 25
     },
 
-
     {
         name: "Ronit Ranjan",
         image: ronit,
         logo: mv,
         pmc: ronit_mv_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Mohit Ranjan",
         image: mohit_ranjan,
         logo: paltech,
         pmc: mohit_ranjan_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Aditya Kumar",
         image: aditya_kumar,
         logo: intuit,
         pmc: adiya_kumar_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Yogesh Kumar",
         image: yogesh_kumar,
         logo: arcesium,
         pmc: yogesh_kumar_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Rohit Kumar",
         image: rohit_kumar,
         logo: Lowes,
         pmc: rohit_kumar_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Ishika Kumari",
         image: ishika_kumari,
         logo: invesco,
         pmc: ishika_kumari_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Akanksha Priya",
         image: akanksha_priya,
         logo: Lowes,
         pmc: akanksha_priya_pmc,
-        batch:24
+        batch: 24
     },
     {
         name: "Vikash Kumar",
         image: vikash_kumar,
         logo: deshaw,
         pmc: vikash_kumar_pmc,
-        batch:24
+        batch: 24
     },
     {
-        name:"Raman Kumar",
-        image:raman_kumar,
-        logo:vyapar,
-        pmc:raman_kumar_pmc,
-        batch:23
+        name: "Raman Kumar",
+        image: raman_kumar,
+        logo: vyapar,
+        pmc: raman_kumar_pmc,
+        batch: 23
     },
     {
-        name:"Shashank Shekhar",
-        image:shashank_shekhar,
-        logo:Qualcomm,
-        pmc:shashank_shekhar_pmc,
-        batch:23
+        name: "Shashank Shekhar",
+        image: shashank_shekhar,
+        logo: Qualcomm,
+        pmc: shashank_shekhar_pmc,
+        batch: 23
     },
     {
-        name:"Ritika Kumari",
-        image:ritika_kumari,
-        logo:olx_autos,
-        pmc:ritika_kumar_pmc,
-        batch:23
+        name: "Ritika Kumari",
+        image: ritika_kumari,
+        logo: olx_autos,
+        pmc: ritika_kumar_pmc,
+        batch: 23
     },
     {
-        name:"Ayush Kumar Chaudhary",
-        image:ayush_kr_chaudhary,
-        logo:yellowai,
-        pmc:ayush_kr_chaudhary_pmc,
-        batch:23
+        name: "Ayush Kumar Chaudhary",
+        image: ayush_kr_chaudhary,
+        logo: yellowai,
+        pmc: ayush_kr_chaudhary_pmc,
+        batch: 23
     },
     {
-        name:"Aditya Raj Srivastava",
-        image:aditya_raj_srivastava,
-        logo:amazon,
-        pmc:aditya_raj_srivastava_pmc,
-        batch:23
+        name: "Aditya Raj Srivastava",
+        image: aditya_raj_srivastava,
+        logo: amazon,
+        pmc: aditya_raj_srivastava_pmc,
+        batch: 23
     },
     {
-        name:"Priya Singh",
-        image:priya_singh,
-        logo:Lowes,
-        pmc:priya_singh_pmc,
-        batch:23
+        name: "Priya Singh",
+        image: priya_singh,
+        logo: Lowes,
+        pmc: priya_singh_pmc,
+        batch: 23
     },
     {
-        name:"Naved Sohail",
-        image:naved_sohail,
-        logo:amazon,
-        pmc:naved_sohail_pmc,
-        batch:23
+        name: "Naved Sohail",
+        image: naved_sohail,
+        logo: amazon,
+        pmc: naved_sohail_pmc,
+        batch: 23
     },
     {
-        name:"Aript Raj",
-        image:arpit_raj,
-        logo:oracle,
-        pmc:arpit_raj_pmc,
-        batch:23
+        name: "Arpit Raj",
+        image: arpit_raj,
+        logo: oracle,
+        pmc: arpit_raj_pmc,
+        batch: 23
     },
     {
-        name:"Yash Baranwal",
-        image:yash_baranwal,
-        logo:atlassian,
-        pmc:yash_baranwal_pmc,
-        batch:23
+        name: "Yash Baranwal",
+        image: yash_baranwal,
+        logo: atlassian,
+        pmc: yash_baranwal_pmc,
+        batch: 23
     },
     {
-        name:"Mohit Mayank",
-        image:mohit_mayank,
-        logo:Qualcomm,
-        pmc:mohit_mayank_pmc,
-        batch:23
+        name: "Mohit Mayank",
+        image: mohit_mayank,
+        logo: Qualcomm,
+        pmc: mohit_mayank_pmc,
+        batch: 23
     }
 ];

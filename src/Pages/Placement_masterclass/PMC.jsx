@@ -58,18 +58,19 @@ const HorizontalScrollCard = ({ member, onOpenModal }) => {
 };
 
 const Masterclass = () => {
-  const [selectedBatch, setSelectedBatch] = useState(24);
+  const [selectedBatch, setSelectedBatch] = useState(26);
   const [modalMember, setModalMember] = useState(null);
   const [batchDropdownOpen, setBatchDropdownOpen] = useState(false);
 
   const batches = {
+    "Batch 2k22-2k26": 26,
     "Batch 2k21-2k25": 25,
     "Batch 2k20-2k24": 24,
     "Batch 2k19-2k23": 23,
   };
 
   const getBatchLabel = (batchNum) => {
-    return Object.keys(batches).find((key) => batches[key] === batchNum) || "Batch 2k20-2k24";
+    return Object.keys(batches).find((key) => batches[key] === batchNum) || "Batch 2k22-2k26";
   };
 
   const filteredMembers = PMCData.filter((item) => item.batch === selectedBatch);
