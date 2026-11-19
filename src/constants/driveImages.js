@@ -1,75 +1,39 @@
 /**
- * Google Drive Asset Configuration & Direct URL Resolution
- * Automatically mapped from Google Drive resources.
+ * JSDelivr GitHub-Backed CDN Asset Resolution
+ * Automatically serves all cloud assets reliably via a fast global CDN
+ * without bloating the Android APK size.
  */
+
+const GITHUB_CDN_BASE = "https://cdn.jsdelivr.net/gh/swrjs/nexus-app@main/src/resources";
 
 export const getDriveImageUrl = (idOrUrl) => {
   if (!idOrUrl) return '';
   if (idOrUrl.startsWith('/') || idOrUrl.startsWith('http')) return idOrUrl;
-  const match = idOrUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  const id = match ? match[1] : idOrUrl;
-  return `https://lh3.googleusercontent.com/d/${id}`;
+  const cleanPath = idOrUrl.replace(/\\/g, '/').replace(/^\/+/, '');
+  return `${GITHUB_CDN_BASE}/${cleanPath}`;
 };
 
 export const getDriveVideoUrl = (idOrUrl) => {
-  if (!idOrUrl) return '';
-  const match = idOrUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  const id = match ? match[1] : idOrUrl;
-  return `https://drive.google.com/uc?export=download&id=${id}`;
+  return getDriveImageUrl(idOrUrl);
 };
-
-export const DRIVE_IMAGES = {
-  "nexus-pirate-map.png": {
-    id: "vertical-map",
-    directUrl: "/mapvertical.png",
-    filename: "nexus-pirate-map.png",
-  },
-  "mapvertical.png": {
-    id: "mapvertical",
-    directUrl: "/mapvertical.png",
-    filename: "mapvertical.png",
-  },
-};
-
-// Normalized fast lookup map
-const NORMALIZED_LOOKUP = {};
-Object.keys(DRIVE_IMAGES).forEach((key) => {
-  const item = DRIVE_IMAGES[key];
-  const normKey = key.replace(/\\/g, '/').toLowerCase();
-  NORMALIZED_LOOKUP[normKey] = item.directUrl;
-  const bareName = item.filename.toLowerCase();
-  if (!NORMALIZED_LOOKUP[bareName]) {
-    NORMALIZED_LOOKUP[bareName] = item.directUrl;
-  }
-});
 
 export const driveAsset = (assetPath) => {
   if (!assetPath) return '';
   if (assetPath.startsWith('/') || assetPath.startsWith('http')) return assetPath;
+
   const cleanPath = assetPath
     .replace(/\\/g, '/')
     .replace(/^(\.\.\/)+assets\//, '')
     .replace(/^assets\//, '')
     .replace(/^\/+/, '');
 
+  // Keep map burned in locally
   if (cleanPath === 'nexus-pirate-map.png' || cleanPath === 'mapvertical.png' || cleanPath.toLowerCase().includes('map')) {
     return '/mapvertical.png';
   }
 
-  // Check lookup
-  const norm = cleanPath.toLowerCase();
-  if (NORMALIZED_LOOKUP[norm]) {
-    return NORMALIZED_LOOKUP[norm];
-  }
-
-  for (const [k, url] of Object.entries(NORMALIZED_LOOKUP)) {
-    if (k.endsWith(norm) || norm.endsWith(k)) {
-      return url;
-    }
-  }
-
-  // Fallback to getDriveImageUrl which formats Google Drive IDs/URLs correctly
-  return getDriveImageUrl(cleanPath);
+  // Serve all other photos/resources from JSDelivr global CDN backed by GitHub
+  return `${GITHUB_CDN_BASE}/${cleanPath}`;
 };
 
 export default driveAsset;
