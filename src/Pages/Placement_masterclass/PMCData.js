@@ -1,19 +1,37 @@
 import { driveAsset } from '../../constants/driveImages';
 
-//batch26
-const p26_1 = driveAsset('placement_masterclass/batch_26/1794819174752.jpg');
-const p26_2 = driveAsset('placement_masterclass/batch_26/1794215442354.jpg');
-const p26_3 = driveAsset('placement_masterclass/batch_26/1789367619332.jpg');
-const p26_4 = driveAsset('placement_masterclass/batch_26/1789964351609.jpg');
-const p26_5 = driveAsset('placement_masterclass/batch_26/1790583463713.jpg');
-const p26_6 = driveAsset('placement_masterclass/batch_26/1792390495435.jpg');
-const p26_7 = driveAsset('placement_masterclass/batch_26/1792993222416.jpg');
-const p26_8 = driveAsset('placement_masterclass/batch_26/1793603918239.jpg');
+//batch26 local burned-in face shots & pmc card images
+const p26_1_face = driveAsset('placement_masterclass/batch_26/face/1794819174752.jpg');
+const p26_1_pmc = driveAsset('placement_masterclass/batch_26/1794819174752.jpg');
 
-const visa = driveAsset('placement_masterclass/company_logo/visa.png');
-const tekion = driveAsset('placement_masterclass/company_logo/tekion.png');
-const bny = driveAsset('placement_masterclass/company_logo/bny_mellon.jpg');
+const p26_2_face = driveAsset('placement_masterclass/batch_26/face/1794215442354.jpg');
+const p26_2_pmc = driveAsset('placement_masterclass/batch_26/1794215442354.jpg');
+
+const p26_3_face = driveAsset('placement_masterclass/batch_26/face/1789367619332.jpg');
+const p26_3_pmc = driveAsset('placement_masterclass/batch_26/1789367619332.jpg');
+
+const p26_4_face = driveAsset('placement_masterclass/batch_26/face/1789964351609.jpg');
+const p26_4_pmc = driveAsset('placement_masterclass/batch_26/1789964351609.jpg');
+
+const p26_5_face = driveAsset('placement_masterclass/batch_26/face/1790583463713.jpg');
+const p26_5_pmc = driveAsset('placement_masterclass/batch_26/1790583463713.jpg');
+
+const p26_6_face = driveAsset('placement_masterclass/batch_26/face/1792390495435.jpg');
+const p26_6_pmc = driveAsset('placement_masterclass/batch_26/1792390495435.jpg');
+
+const p26_7_face = driveAsset('placement_masterclass/batch_26/face/1792993222416.jpg');
+const p26_7_pmc = driveAsset('placement_masterclass/batch_26/1792993222416.jpg');
+
+const p26_8_face = driveAsset('placement_masterclass/batch_26/face/1793603918239.jpg');
+const p26_8_pmc = driveAsset('placement_masterclass/batch_26/1793603918239.jpg');
+
+// Company logos (burned in)
 const optum = driveAsset('placement_masterclass/company_logo/optum.jpg');
+const atlassian = driveAsset('placement_masterclass/company_logo/atlassian.jpg');
+const ubs = driveAsset('placement_masterclass/company_logo/ubs.jpg');
+const bny = driveAsset('placement_masterclass/company_logo/bny_mellon.jpg');
+const tekion = driveAsset('placement_masterclass/company_logo/tekion.png');
+const visa = driveAsset('placement_masterclass/company_logo/visa.png');
 
 //batch25
 const png1 = driveAsset('placement_masterclass/batch_25/1.png');
@@ -81,7 +99,6 @@ const yash_baranwal = driveAsset('placement_masterclass/batch_23/yash-baranwal.j
 const yash_baranwal_pmc = driveAsset('placement_masterclass/batch_23/yash-baranwal-pmc.jpg');
 
 const amazon = driveAsset('placement_masterclass/company_logo/amazon.jpg');
-const atlassian = driveAsset('placement_masterclass/company_logo/atlassian.jpg');
 const olx_autos = driveAsset('placement_masterclass/company_logo/olx-autos.jpg');
 const oracle = driveAsset('placement_masterclass/company_logo/oracle.jpg');
 const Qualcomm = driveAsset('placement_masterclass/company_logo/Qualcomm.png');
@@ -91,63 +108,62 @@ const Fastenal = driveAsset('placement_masterclass/company_logo/Fastenal.png');
 const nmtronics = driveAsset('placement_masterclass/company_logo/nmtronics.png');
 const logic = driveAsset('placement_masterclass/company_logo/logic.png');
 const gehealthcare = driveAsset('placement_masterclass/company_logo/ge-healthcare.png');
-const ubs = driveAsset('placement_masterclass/company_logo/ubs.jpg');
 
 export const PMCData = [
     {
-        name: "Placement Achiever 1",
-        image: p26_1,
-        logo: visa,
-        pmc: p26_1,
-        batch: 26
-    },
-    {
-        name: "Placement Achiever 2",
-        image: p26_2,
-        logo: tekion,
-        pmc: p26_2,
-        batch: 26
-    },
-    {
-        name: "Placement Achiever 3",
-        image: p26_3,
-        logo: bny,
-        pmc: p26_3,
-        batch: 26
-    },
-    {
-        name: "Placement Achiever 4",
-        image: p26_4,
+        name: "Priyanshu Dev",
+        image: p26_1_face,
         logo: optum,
-        pmc: p26_4,
+        pmc: p26_1_pmc,
         batch: 26
     },
     {
-        name: "Placement Achiever 5",
-        image: p26_5,
-        logo: amazon,
-        pmc: p26_5,
-        batch: 26
-    },
-    {
-        name: "Placement Achiever 6",
-        image: p26_6,
+        name: "Shreshth Prasad",
+        image: p26_2_face,
         logo: atlassian,
-        pmc: p26_6,
+        pmc: p26_2_pmc,
         batch: 26
     },
     {
-        name: "Placement Achiever 7",
-        image: p26_7,
-        logo: Qualcomm,
-        pmc: p26_7,
+        name: "Ankit Singh",
+        image: p26_3_face,
+        logo: ubs,
+        pmc: p26_3_pmc,
         batch: 26
     },
     {
-        name: "Placement Achiever 8",
-        image: p26_8,
-        logo: oracle,
-        pmc: p26_8,
+        name: "Somensh Ghosh",
+        image: p26_4_face,
+        logo: bny,
+        pmc: p26_4_pmc,
+        batch: 26
+    },
+    {
+        name: "Hrishita Singh",
+        image: p26_5_face,
+        logo: tekion,
+        pmc: p26_5_pmc,
+        batch: 26
+    },
+    {
+        name: "Prince Agastya Jaiswal",
+        image: p26_6_face,
+        logo: ubs,
+        pmc: p26_6_pmc,
+        batch: 26
+    },
+    {
+        name: "Ayush Raj",
+        image: p26_7_face,
+        logo: ubs,
+        pmc: p26_7_pmc,
+        batch: 26
+    },
+    {
+        name: "Adarsh Kumar",
+        image: p26_8_face,
+        logo: visa,
+        pmc: p26_8_pmc,
         batch: 26
     },
 
