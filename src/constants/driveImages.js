@@ -32,6 +32,12 @@ export const driveAsset = (assetPath) => {
     return '/mapvertical.png';
   }
 
+  // Serve gallery2025 locally
+  if (cleanPath.toLowerCase().includes('gallery2025')) {
+    const subPath = cleanPath.replace(/^resources\//, '');
+    return `/resources/${subPath}`;
+  }
+
   // Serve all other photos/resources from JSDelivr global CDN backed by GitHub
   return `${GITHUB_CDN_BASE}/${cleanPath}`;
 };
