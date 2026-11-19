@@ -1,0 +1,44 @@
+{
+  "name": "SECE NEXUS — NIT Jamshedpur",
+  "short_name": "SECE NEXUS",
+  "description": "Official app of Society of Electronics and Communication Engineering, NIT Jamshedpur",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0705",
+  "theme_color": "#110c08",
+  "categories": ["education", "social"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Events",
+      "url": "/#/events",
+      "description": "View upcoming events"
+    },
+    {
+      "name": "Nexus Fest",
+      "url": "/#/nexus",
+      "description": "Explore Nexus Fest"
+    },
+    {
+      "name": "Team",
+      "url": "/#/team",
+      "description": "Meet the team"
+    }
+  ]
+}
