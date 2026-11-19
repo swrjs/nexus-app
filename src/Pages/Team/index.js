@@ -1114,3 +1114,69 @@ export const Batch2K24 = [
     Img: Tanushri_24,
   },
 ];
+
+const Img25_1 = driveAsset('Member/2K25/image1.jpeg');
+const Img25_2 = driveAsset('Member/2K25/image2.jpeg');
+const Img25_3 = driveAsset('Member/2K25/image3.jpeg');
+const Img25_4 = driveAsset('Member/2K25/image4.jpeg');
+const Img25_5 = driveAsset('Member/2K25/image5.jpeg');
+const Img25_6 = driveAsset('Member/2K25/image6.jpeg');
+const Img25_7 = driveAsset('Member/2K25/image7.jpeg');
+const Img25_8 = driveAsset('Member/2K25/image8.jpeg');
+const Img25_9 = driveAsset('Member/2K25/image9.jpeg');
+const Img25_10 = driveAsset('Member/2K25/image10.jpeg');
+const Img25_11 = driveAsset('Member/2K25/image11.jpeg');
+const Img25_12 = driveAsset('Member/2K25/image12.jpeg');
+const Img25_13 = driveAsset('Member/2K25/image13.jpeg');
+const Img25_14 = driveAsset('Member/2K25/image14.jpeg');
+const Img25_15 = driveAsset('Member/2K25/image15.jpeg');
+const Img25_16 = driveAsset('Member/2K25/image16.jpeg');
+const Img25_17 = driveAsset('Member/2K25/image17.jpeg');
+const Img25_18 = driveAsset('Member/2K25/image18.jpeg');
+const Img25_19 = driveAsset('Member/2K25/image19.jpeg');
+const Img25_20 = driveAsset('Member/2K25/image20.jpeg');
+const Img25_21 = driveAsset('Member/2K25/image21.jpeg');
+const Img25_22 = driveAsset('Member/2K25/image22.jpeg');
+const Img25_23 = driveAsset('Member/2K25/image23.jpeg');
+const Img25_24 = driveAsset('Member/2K25/image24.jpeg');
+const Img25_25 = driveAsset('Member/2K25/image25.jpeg');
+const Img25_26 = driveAsset('Member/2K25/image26.jpeg');
+const Img25_27 = driveAsset('Member/2K25/image27.jpeg');
+const Img25_28 = driveAsset('Member/2K25/image28.jpeg');
+const Img25_29 = driveAsset('Member/2K25/image29.jpeg');
+const Img25_30 = driveAsset('Member/2K25/image30.jpeg');
+const Img25_31 = driveAsset('Member/2K25/image31.jpeg');
+
+export const Batch2K25 = [
+  { Name: "Member 1", POR: "Member", Email: "2025ugec001@nitjsr.ac.in", LinkedIn: "", Img: Img25_1 },
+  { Name: "Member 2", POR: "Member", Email: "2025ugec002@nitjsr.ac.in", LinkedIn: "", Img: Img25_2 },
+  { Name: "Member 3", POR: "Member", Email: "2025ugec003@nitjsr.ac.in", LinkedIn: "", Img: Img25_3 },
+  { Name: "Member 4", POR: "Member", Email: "2025ugec004@nitjsr.ac.in", LinkedIn: "", Img: Img25_4 },
+  { Name: "Member 5", POR: "Member", Email: "2025ugec005@nitjsr.ac.in", LinkedIn: "", Img: Img25_5 },
+  { Name: "Member 6", POR: "Member", Email: "2025ugec006@nitjsr.ac.in", LinkedIn: "", Img: Img25_6 },
+  { Name: "Member 7", POR: "Member", Email: "2025ugec007@nitjsr.ac.in", LinkedIn: "", Img: Img25_7 },
+  { Name: "Member 8", POR: "Member", Email: "2025ugec008@nitjsr.ac.in", LinkedIn: "", Img: Img25_8 },
+  { Name: "Member 9", POR: "Member", Email: "2025ugec009@nitjsr.ac.in", LinkedIn: "", Img: Img25_9 },
+  { Name: "Member 10", POR: "Member", Email: "2025ugec010@nitjsr.ac.in", LinkedIn: "", Img: Img25_10 },
+  { Name: "Member 11", POR: "Member", Email: "2025ugec011@nitjsr.ac.in", LinkedIn: "", Img: Img25_11 },
+  { Name: "Member 12", POR: "Member", Email: "2025ugec012@nitjsr.ac.in", LinkedIn: "", Img: Img25_12 },
+  { Name: "Member 13", POR: "Member", Email: "2025ugec013@nitjsr.ac.in", LinkedIn: "", Img: Img25_13 },
+  { Name: "Member 14", POR: "Member", Email: "2025ugec014@nitjsr.ac.in", LinkedIn: "", Img: Img25_14 },
+  { Name: "Member 15", POR: "Member", Email: "2025ugec015@nitjsr.ac.in", LinkedIn: "", Img: Img25_15 },
+  { Name: "Member 16", POR: "Member", Email: "2025ugec016@nitjsr.ac.in", LinkedIn: "", Img: Img25_16 },
+  { Name: "Member 17", POR: "Member", Email: "2025ugec017@nitjsr.ac.in", LinkedIn: "", Img: Img25_17 },
+  { Name: "Member 18", POR: "Member", Email: "2025ugec018@nitjsr.ac.in", LinkedIn: "", Img: Img25_18 },
+  { Name: "Member 19", POR: "Member", Email: "2025ugec019@nitjsr.ac.in", LinkedIn: "", Img: Img25_19 },
+  { Name: "Member 20", POR: "Member", Email: "2025ugec020@nitjsr.ac.in", LinkedIn: "", Img: Img25_20 },
+  { Name: "Member 21", POR: "Member", Email: "2025ugec021@nitjsr.ac.in", LinkedIn: "", Img: Img25_21 },
+  { Name: "Member 22", POR: "Member", Email: "2025ugec022@nitjsr.ac.in", LinkedIn: "", Img: Img25_22 },
+  { Name: "Member 23", POR: "Member", Email: "2025ugec023@nitjsr.ac.in", LinkedIn: "", Img: Img25_23 },
+  { Name: "Member 24", POR: "Member", Email: "2025ugec024@nitjsr.ac.in", LinkedIn: "", Img: Img25_24 },
+  { Name: "Member 25", POR: "Member", Email: "2025ugec025@nitjsr.ac.in", LinkedIn: "", Img: Img25_25 },
+  { Name: "Member 26", POR: "Member", Email: "2025ugec026@nitjsr.ac.in", LinkedIn: "", Img: Img25_26 },
+  { Name: "Member 27", POR: "Member", Email: "2025ugec027@nitjsr.ac.in", LinkedIn: "", Img: Img25_27 },
+  { Name: "Member 28", POR: "Member", Email: "2025ugec028@nitjsr.ac.in", LinkedIn: "", Img: Img25_28 },
+  { Name: "Member 29", POR: "Member", Email: "2025ugec029@nitjsr.ac.in", LinkedIn: "", Img: Img25_29 },
+  { Name: "Member 30", POR: "Member", Email: "2025ugec030@nitjsr.ac.in", LinkedIn: "", Img: Img25_30 },
+  { Name: "Member 31", POR: "Member", Email: "2025ugec031@nitjsr.ac.in", LinkedIn: "", Img: Img25_31 },
+];

@@ -2,22 +2,23 @@ import { useState } from "react";
 import PirateLayout from "../../components/PirateTheme/PirateLayout";
 import ParchmentScroll from "../../components/PirateTheme/ParchmentScroll";
 import ScrollCard from "../../components/PirateTheme/ScrollCard";
-import { Batch2K22, Batch2K23, Batch2K24 } from "./index";
+import { Batch2K22, Batch2K23, Batch2K24, Batch2K25 } from "./index";
 import { driveAsset } from "../../constants/driveImages";
 const faculty_image = driveAsset("Member/dr-surajit-kundu.jpg");
 import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const TeamPage = () => {
   const batches = {
-    "Batch 2K23-2K27": Batch2K23,
+    "Batch 2K25-2K29": Batch2K25,
     "Batch 2K24-2K28": Batch2K24,
+    "Batch 2K23-2K27": Batch2K23,
     "Batch 2K22-2K26": Batch2K22,
   };
 
-  const [selectedBatchKey, setSelectedBatchKey] = useState("Batch 2K23-2K27");
+  const [selectedBatchKey, setSelectedBatchKey] = useState("Batch 2K25-2K29");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const currentMembers = batches[selectedBatchKey] || Batch2K23;
+  const currentMembers = batches[selectedBatchKey] || Batch2K25;
 
   // Batch Selector Dropdown (Centered)
   const batchDropdown = (

@@ -276,7 +276,7 @@ const HomePage = () => {
                   width: pin.width,
                   height: pin.height,
                 }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 z-25 group cursor-pointer focus:outline-none rounded-xl min-w-[44px] min-h-[44px] transition-all duration-300 ease-out hover:scale-105 hotspot-glow pointer-events-auto"
+                className="absolute -translate-x-1/2 -translate-y-1/2 z-25 group cursor-pointer focus:outline-none bg-transparent border-0 outline-none ring-0 shadow-none min-w-[44px] min-h-[44px] pointer-events-auto"
                 title={`Click to sail to ${pin.title}`}
                 aria-label={`Sail to ${pin.title}`}
               >
