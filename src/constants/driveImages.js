@@ -1797,7 +1797,7 @@ export const DRIVE_IMAGES = {
   "nexus-pirate-map.png": {
     id: "vertical-map",
     viewUrl: "",
-    directUrl: "https://chatgpt.com/backend-api/files/file_service_000000000000000000000000",
+    directUrl: "/mapvertical.png",
     filename: "nexus-pirate-map.png",
   },
   "pirate_theme/alumni_original.jpg": {
