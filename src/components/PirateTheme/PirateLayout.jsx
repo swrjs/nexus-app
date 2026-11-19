@@ -148,71 +148,75 @@ const PirateLayout = ({ children, activeNav, topBarExtras }) => {
           </div>
         </div>
 
-        {/* FULL-SCREEN OVERLAY SIDEBAR WHEN HAMBURGER IS PRESSED */}
+        {/* SIDEBAR OVERLAY (Covers ~half screen, darkens background) */}
         {mobileOpen && (
-          <div className="fixed inset-0 z-50 bg-[#0e0a07] flex flex-col p-6 overflow-y-auto animate-fade-in">
-            {/* Sidebar Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#3d2c1c]">
-              <div className="flex items-center gap-2.5">
-                <ShipWheelIcon className="w-8 h-8" color="#d4af37" />
-                <span className="font-cinzel font-extrabold text-xl text-[#f0cb79]">
-                  SECE Navigation
-                </span>
+          <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex justify-start animate-fade-in">
+            <div className="w-4/5 xs:w-3/5 sm:w-1/2 max-w-md h-full bg-[#0e0a07] border-r border-[#3d2c1c] flex flex-col p-6 overflow-y-auto shadow-2xl">
+              {/* Sidebar Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-[#3d2c1c]">
+                <div className="flex items-center gap-2.5">
+                  <ShipWheelIcon className="w-8 h-8" color="#d4af37" />
+                  <span className="font-cinzel font-extrabold text-xl text-[#f0cb79]">
+                    SECE Navigation
+                  </span>
+                </div>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#1a130b] border border-[#523d26] text-[#e8c782] cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <FaTimes size={18} />
+                </button>
               </div>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#1a130b] border border-[#523d26] text-[#e8c782] cursor-pointer"
-                aria-label="Close menu"
-              >
-                <FaTimes size={18} />
-              </button>
-            </div>
 
-            {/* Vertical Tabs */}
-            <nav className="flex flex-col gap-3 py-6">
-              {NAV_ITEMS.map((item) => {
-                const active = isItemActive(item);
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className={`flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-cinzel font-semibold transition-all duration-200 ${
-                      active
-                        ? "bg-[#2a1c10] border border-[#a67c38] text-[#f7cd78]"
-                        : "bg-[#140e08] border border-[#3d2c1c] text-[#c2af94] hover:text-[#f3d48d] hover:bg-[#1c130b]"
-                    }`}
-                  >
-                    {Icon === ShipWheelIcon || Icon === CrossedSwordsIcon ? (
-                      <Icon className="w-5 h-5 flex-shrink-0" color={active ? "#f7cd78" : "#c2af94"} />
-                    ) : (
-                      <Icon size={18} />
-                    )}
-                    <span>{item.name}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+              {/* Vertical Tabs */}
+              <nav className="flex flex-col gap-3 py-6">
+                {NAV_ITEMS.map((item) => {
+                  const active = isItemActive(item);
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-cinzel font-semibold transition-all duration-200 ${
+                        active
+                          ? "bg-[#2a1c10] border border-[#a67c38] text-[#f7cd78]"
+                          : "bg-[#140e08] border border-[#3d2c1c] text-[#c2af94] hover:text-[#f3d48d] hover:bg-[#1c130b]"
+                      }`}
+                    >
+                      {Icon === ShipWheelIcon || Icon === CrossedSwordsIcon ? (
+                        <Icon className="w-5 h-5 flex-shrink-0" color={active ? "#f7cd78" : "#c2af94"} />
+                      ) : (
+                        <Icon size={18} />
+                      )}
+                      <span>{item.name}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
 
-            {/* Social Links at Bottom of Sidebar */}
-            <div className="mt-auto pt-6 border-t border-[#3d2c1c] flex items-center justify-center gap-6">
-              <a href="https://www.youtube.com/@sece_nitjsr" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                <FaYoutube size={22} />
-              </a>
-              <a href="https://www.linkedin.com/company/society-of-electronics-and-communication-engineering-nit-jamshedpur/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                <FaLinkedinIn size={22} />
-              </a>
-              <a href="https://www.facebook.com/sece.nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                <FaFacebookF size={22} />
-              </a>
-              <a href="https://www.instagram.com/sece_nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
-                <FaInstagram size={22} />
-              </a>
-              <a href="mailto:sece.student@nitjsr.ac.in" className="text-[#ab9475] hover:text-[#f5c767]">
-                <FaEnvelope size={22} />
-              </a>
+              {/* Social Links at Bottom of Sidebar */}
+              <div className="mt-auto pt-6 border-t border-[#3d2c1c] flex items-center justify-center gap-6">
+                <a href="https://www.youtube.com/@sece_nitjsr" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                  <FaYoutube size={22} />
+                </a>
+                <a href="https://www.linkedin.com/company/society-of-electronics-and-communication-engineering-nit-jamshedpur/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                  <FaLinkedinIn size={22} />
+                </a>
+                <a href="https://www.facebook.com/sece.nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                  <FaFacebookF size={22} />
+                </a>
+                <a href="https://www.instagram.com/sece_nitjsr/" target="_blank" rel="noreferrer" className="text-[#ab9475] hover:text-[#f5c767]">
+                  <FaInstagram size={22} />
+                </a>
+                <a href="mailto:sece.student@nitjsr.ac.in" className="text-[#ab9475] hover:text-[#f5c767]">
+                  <FaEnvelope size={22} />
+                </a>
+              </div>
             </div>
+            {/* Click outside to close */}
+            <div className="flex-1 h-full" onClick={() => setMobileOpen(false)} />
           </div>
         )}
       </header>

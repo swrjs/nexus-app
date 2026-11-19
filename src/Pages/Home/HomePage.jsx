@@ -174,7 +174,7 @@ const HomePage = () => {
 
   return (
     <PirateLayout activeNav="Map">
-      <div className="w-full h-full flex-1 flex flex-col relative overflow-hidden select-none bg-[#070504]">
+      <div className="w-full h-full flex-1 flex flex-col relative overflow-hidden select-none bg-[#0a0705]">
 
         {/* Floating Zoom Controls Widget */}
         <div className="absolute top-3 right-3 z-30 flex items-center bg-[#100b07]/90 backdrop-blur-md border border-[#523d26] rounded-xl p-1 shadow-[0_8px_20px_rgba(0,0,0,0.8)]">
@@ -215,7 +215,7 @@ const HomePage = () => {
         </div>
 
         {/* Fullscreen Map Canvas */}
-        <div className="w-full flex-1 relative overflow-hidden touch-none flex items-center justify-center">
+        <div className="w-full flex-1 relative overflow-hidden touch-none flex items-center justify-center bg-[#0a0705]">
           <div
             className={`relative w-full h-full max-w-4xl aspect-[576/1024] transition-transform duration-75 ease-out origin-center ${
               zoomLevel > 1 ? "cursor-grab active:cursor-grabbing" : ""
@@ -237,14 +237,14 @@ const HomePage = () => {
             <img
               src={driveAsset("nexus-pirate-map.png")}
               alt="SECE Treasure Map - Different Islands Same Crew Bigger Dreams"
-              className="w-full h-full object-contain object-center select-none pointer-events-none"
+              className="w-full h-full object-cover object-center select-none pointer-events-none"
               style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
 
             {/* SVG Sailing Routes */}
             <svg
               viewBox="0 0 576 1024"
-              className="absolute inset-0 pointer-events-none z-20 w-full h-full object-contain"
+              className="absolute inset-0 pointer-events-none z-20 w-full h-full object-cover"
             >
               <path d="M 210 180 Q 320 220, 420 270" className="stroke-gold-glow" />
               <path d="M 430 290 Q 320 370, 155 460" className="stroke-gold-glow" />
