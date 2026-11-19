@@ -15,39 +15,49 @@ const ISLAND_PINS = [
     id: "nexus",
     title: "Nexus",
     path: "/nexus",
-    left: "27.5%",
-    top: "31.5%",
-    width: "16%",
-    height: "13%",
+    left: "36.0%",
+    top: "18.0%",
+    width: "28%",
+    height: "15%",
     desc: "The Annual Flagship Fest of ECE: 3 days of techno-cultural brilliance, coding battles & fun!",
   },
   {
     id: "events",
     title: "Events",
     path: "/events",
-    left: "45.5%",
-    top: "44.5%",
-    width: "15%",
-    height: "13%",
+    left: "74.0%",
+    top: "27.0%",
+    width: "26%",
+    height: "15%",
     desc: "Coding challenges, technical workshops, robotics contests, and fun tournaments.",
+  },
+  {
+    id: "home",
+    title: "Home",
+    path: "/home",
+    left: "27.0%",
+    top: "45.0%",
+    width: "24%",
+    height: "14%",
+    desc: "Society of Electronics & Communication basecamp: history, vision & community.",
   },
   {
     id: "team",
     title: "Team",
     path: "/team",
-    left: "70.2%",
-    top: "41.0%",
-    width: "15%",
-    height: "13%",
+    left: "44.0%",
+    top: "65.0%",
+    width: "28%",
+    height: "15%",
     desc: "Meet the crew: student leaders, heads, and members driving the society forward.",
   },
   {
     id: "pmc",
     title: "Placement Masterclass",
     path: "/placement_masterclass",
-    left: "86.0%",
-    top: "56.0%",
-    width: "17%",
+    left: "72.0%",
+    top: "70.0%",
+    width: "26%",
     height: "14%",
     desc: "Alumni wisdom, placement stories, preparation roadmaps & top company interview tips.",
   },
@@ -55,21 +65,11 @@ const ISLAND_PINS = [
     id: "alumni",
     title: "Alumni",
     path: "/alumni",
-    left: "73.5%",
-    top: "76.8%",
-    width: "16%",
-    height: "13%",
+    left: "48.0%",
+    top: "88.0%",
+    width: "26%",
+    height: "12%",
     desc: "Legacy records of past batches: creators of community, architects of tomorrow.",
-  },
-  {
-    id: "home",
-    title: "Home",
-    path: "/home",
-    left: "16.5%",
-    top: "81.2%",
-    width: "16%",
-    height: "14%",
-    desc: "Society of Electronics & Communication basecamp: history, vision & community.",
   },
 ];
 
@@ -96,7 +96,7 @@ const HomePage = () => {
 
   return (
     <PirateLayout activeNav="Map">
-      <div className="max-w-7xl mx-auto py-1 flex flex-col items-center animate-fade-in-up w-full">
+      <div className="max-w-4xl mx-auto py-1 flex flex-col items-center animate-fade-in-up w-full">
 
         {/* Header Banner */}
         <div className="w-full flex flex-wrap items-center justify-between gap-2.5 px-3 xs:px-4 py-2.5 mb-3 rounded-xl bg-gradient-to-r from-[#140e08]/95 via-[#1c130b]/90 to-[#140e08]/95 border border-[#4a341e]/70 shadow-lg text-xs">
@@ -170,7 +170,7 @@ const HomePage = () => {
         </div>
 
         {/* Map Container */}
-        <div className="relative w-full p-[3px] rounded-2xl bg-gradient-to-b from-[#8a632c] via-[#2a1a0b] to-[#8a632c] shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(156,115,51,0.18)] transition-all duration-300 overflow-hidden">
+        <div className="relative w-full max-w-2xl mx-auto p-[3px] rounded-2xl bg-gradient-to-b from-[#8a632c] via-[#2a1a0b] to-[#8a632c] shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(156,115,51,0.18)] transition-all duration-300 overflow-hidden">
 
           <div
             className={`w-full rounded-[13px] bg-[#0c0906] select-none scrollbar-thin ${
@@ -181,19 +181,24 @@ const HomePage = () => {
           >
 
             <div
-              className="relative w-full aspect-[1024/576] min-w-[320px] transition-transform duration-300 ease-out origin-top-left"
+              className="relative w-full aspect-[576/1024] min-w-[320px] transition-transform duration-300 ease-out origin-top-left"
               style={{
                 transform: `scale(${zoomLevel})`,
                 width: zoomLevel > 1 ? `${zoomLevel * 100}%` : "100%",
               }}
             >
 
-              {/* Main Map Image */}
+              {/* Main Map Image (Vertical Map Attached) */}
               <img
-                src={driveAsset("nexus-pirate-map.png")}
+                src="https://chatgpt.com/get-image/... / or user attached image URL"
                 alt="SECE Treasure Map - Different Islands Same Crew Bigger Dreams"
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
                 style={{ imageRendering: "-webkit-optimize-contrast" }}
+                onError={(e) => {
+                  // Fallback to driveAsset if direct URL fails
+                  e.target.onerror = null;
+                  e.target.src = driveAsset("nexus-pirate-map.png");
+                }}
               />
 
               {/* Perimeter Vignette */}
@@ -206,15 +211,14 @@ const HomePage = () => {
 
               {/* SVG Sailing Routes */}
               <svg
-                viewBox="0 0 1024 576"
+                viewBox="0 0 576 1024"
                 className="absolute inset-0 pointer-events-none z-20"
               >
-                <path d="M 205 440 Q 320 380, 440 290" className="stroke-gold-glow" />
-                <path d="M 420 260 C 355 265, 335 240, 290 215" className="stroke-gold-glow" />
-                <path d="M 345 140 C 470 105, 590 130, 680 190" className="stroke-gold-glow" />
-                <path d="M 750 255 Q 795 285, 840 325" className="stroke-gold-glow" />
-                <path d="M 850 360 Q 820 405, 765 435" className="stroke-gold-glow" />
-                <path d="M 710 470 C 560 435, 380 480, 220 475" className="stroke-gold-glow" />
+                <path d="M 210 180 Q 320 220, 420 270" className="stroke-gold-glow" />
+                <path d="M 430 290 Q 320 370, 155 460" className="stroke-gold-glow" />
+                <path d="M 170 480 Q 280 570, 250 665" className="stroke-gold-glow" />
+                <path d="M 270 670 Q 350 700, 415 720" className="stroke-gold-glow" />
+                <path d="M 260 680 Q 270 800, 280 900" className="stroke-gold-glow" />
               </svg>
 
               {/* Clickable Island Hotspots */}
@@ -276,7 +280,7 @@ const HomePage = () => {
         {/* Mobile Assistance Note */}
         <div className="w-full flex items-center justify-between text-[11px] text-[#9e886d] mt-2 px-2 sm:hidden">
           <span>
-            Tap any island pin to explore destinations below.
+            Tap any island pin to explore.
           </span>
 
           {zoomLevel > 1 && (
@@ -285,47 +289,6 @@ const HomePage = () => {
             </span>
           )}
         </div>
-
-       
-{/* Destinations Deck */}
-<div className="w-full mt-6 sm:mt-8">
-
-  <div className="flex items-center justify-between mb-3 px-1 border-b border-[#3d2c1b] pb-2">
-    <h3 className="font-cinzel font-bold text-sm sm:text-base text-[#f5ca73] tracking-wider uppercase">
-      Archipelago Destinations
-    </h3>
-
-    <span className="text-[11px] text-[#a89274] font-sans">
-      6 destinations
-    </span>
-  </div>
-
-  <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-    {ISLAND_PINS.map((pin) => (
-      <button
-        key={pin.id}
-        type="button"
-        onClick={() => handlePinClick(pin)}
-        className="group text-left p-4 rounded-lg bg-[#18110b] border border-[#3d2c1c] hover:border-[#a67c38] hover:bg-[#20170e] transition-all duration-300 flex flex-col justify-between"
-      >
-        <div>
-          <h4 className="font-cinzel font-bold text-sm text-[#f5ca73] group-hover:text-[#fde29f] mb-2">
-            {pin.title}
-          </h4>
-
-          <p className="text-[11px] text-[#baa386] font-sans leading-relaxed line-clamp-2">
-            {pin.desc}
-          </p>
-        </div>
-
-        <div className="mt-3 pt-2 border-t border-[#2d2014] text-[10px] font-cinzel font-semibold text-[#c89d55] group-hover:text-[#f5ca73]">
-          Explore
-        </div>
-      </button>
-    ))}
-  </div>
-</div>
-
 
       </div>
     </PirateLayout>
