@@ -23,8 +23,8 @@ const config: CapacitorConfig = {
     },
   },
   android: {
-    // Allow cleartext HTTP during development (remove for production)
-    allowMixedContent: false,
+    // Allow mixed content for loading external CDN assets
+    allowMixedContent: true,
   },
 };
 
