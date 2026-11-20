@@ -1,29 +1,29 @@
-import { driveAsset } from "../../constants/driveImages";
+// Hardcoded JSDelivr CDN URLs for gallery2k25 folder content in respective Nexus event sections
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/swrjs/nexus-app@main/src/resources";
 
-// Event photos from gallery2025
-const model1 = driveAsset("NexusPage/gallery2025/nexus model 1.jpg");
-const model2 = driveAsset("NexusPage/gallery2025/nexus model 2.jpg");
-const model3 = driveAsset("NexusPage/gallery2025/nexus model 3.jpeg");
+const model1 = `${CDN_BASE}/gallery2k25/nexus model 1.jpg`;
+const model2 = `${CDN_BASE}/gallery2k25/nexus model 2.jpg`;
+const model3 = `${CDN_BASE}/gallery2k25/nexus model 3.jpeg`;
 
-const crypt1 = driveAsset("NexusPage/gallery2025/CryptHunt.jpeg");
-const crypt2 = driveAsset("NexusPage/gallery2025/CryptHunt1.jpg.jpeg");
-const crypt3 = driveAsset("NexusPage/gallery2025/CryptHunt2.jpeg");
+const crypt1 = `${CDN_BASE}/gallery2k25/CryptHunt.jpeg`;
+const crypt2 = `${CDN_BASE}/gallery2k25/CryptHunt1.jpg.jpeg`;
+const crypt3 = `${CDN_BASE}/gallery2k25/CryptHunt2.jpeg`;
 
-const trace1 = driveAsset("NexusPage/gallery2025/tracebot1.jpg");
-const trace2 = driveAsset("NexusPage/gallery2025/tracebot2.jpg");
-const trace3 = driveAsset("NexusPage/gallery2025/tracebot3.jpg");
+const trace1 = `${CDN_BASE}/gallery2k25/tracebot1.jpg`;
+const trace2 = `${CDN_BASE}/gallery2k25/tracebot2.jpg`;
+const trace3 = `${CDN_BASE}/gallery2k25/tracebot3.jpg`;
 
-const face1 = driveAsset("NexusPage/gallery2025/facepainting1.jpeg");
-const face2 = driveAsset("NexusPage/gallery2025/facepainting 2.jpg");
-const face3 = driveAsset("NexusPage/gallery2025/facepainting3 .jpg");
+const face1 = `${CDN_BASE}/gallery2k25/facepainting1.jpeg`;
+const face2 = `${CDN_BASE}/gallery2k25/facepainting 2.jpg`;
+const face3 = `${CDN_BASE}/gallery2k25/facepainting3 .jpg`;
 
-const urban1 = driveAsset("NexusPage/gallery2025/urbanNXT1.JPG");
-const urban2 = driveAsset("NexusPage/gallery2025/urbanNXT2.JPG");
-const urban3 = driveAsset("NexusPage/gallery2025/urbanNXT3.JPG");
+const urban1 = `${CDN_BASE}/gallery2k25/urbanNXT1.JPG`;
+const urban2 = `${CDN_BASE}/gallery2k25/urbanNXT2.JPG`;
+const urban3 = `${CDN_BASE}/gallery2k25/urbanNXT3.JPG`;
 
-const photo1 = driveAsset("NexusPage/gallery2025/photolink1.jpeg");
-const photo2 = driveAsset("NexusPage/gallery2025/photolink 2.JPG.jpeg");
-const photo3 = driveAsset("NexusPage/gallery2025/photolink3.jpeg");
+const photo1 = `${CDN_BASE}/gallery2k25/photolink1.jpeg`;
+const photo2 = `${CDN_BASE}/gallery2k25/photolink 2.JPG.jpeg`;
+const photo3 = `${CDN_BASE}/gallery2k25/photolink3.jpeg`;
 
 // New Nexus Events Data (CodeNexus removed, Crypt Hunt 2nd image replaced with 1st image)
 const events = [

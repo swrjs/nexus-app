@@ -1,16 +1,14 @@
 /**
- * JSDelivr GitHub-Backed CDN Asset Resolution
- * Automatically serves all cloud assets reliably via a fast global CDN
- * without bloating the Android APK size.
+ * 100% Local Asset Resolution
+ * All assets (map, members, events, gallery, PMC) are served locally from /resources/
+ * ensuring 100% offline-ready performance and lightning-fast loading.
  */
-
-const GITHUB_CDN_BASE = "https://cdn.jsdelivr.net/gh/swrjs/nexus-app@main/src/resources";
 
 export const getDriveImageUrl = (idOrUrl) => {
   if (!idOrUrl) return '';
   if (idOrUrl.startsWith('/') || idOrUrl.startsWith('http')) return idOrUrl;
   const cleanPath = idOrUrl.replace(/\\/g, '/').replace(/^\/+/, '');
-  return `${GITHUB_CDN_BASE}/${cleanPath}`;
+  return `/resources/${cleanPath}`;
 };
 
 export const getDriveVideoUrl = (idOrUrl) => {
@@ -27,19 +25,13 @@ export const driveAsset = (assetPath) => {
     .replace(/^assets\//, '')
     .replace(/^\/+/, '');
 
-  // Keep map burned in locally
   if (cleanPath === 'nexus-pirate-map.png' || cleanPath === 'mapvertical.png' || cleanPath.toLowerCase().includes('map')) {
     return '/mapvertical.png';
   }
 
-  // Serve gallery2025 locally
-  if (cleanPath.toLowerCase().includes('gallery2025')) {
-    const subPath = cleanPath.replace(/^resources\//, '');
-    return `/resources/${subPath}`;
-  }
-
-  // Serve all other photos/resources from JSDelivr global CDN backed by GitHub
-  return `${GITHUB_CDN_BASE}/${cleanPath}`;
+  // Serve 100% locally from public / resources
+  const subPath = cleanPath.replace(/^resources\//, '');
+  return `/resources/${subPath}`;
 };
 
 export default driveAsset;

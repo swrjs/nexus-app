@@ -1,37 +1,37 @@
-import { driveAsset } from '../../constants/driveImages';
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/swrjs/nexus-app@main/src/resources";
 
-//batch26 local burned-in face shots & pmc card images
-const p26_1_face = driveAsset('placement_masterclass/batch_26/face/1794819174752.jpg');
-const p26_1_pmc = driveAsset('placement_masterclass/batch_26/1794819174752.jpg');
+//batch26 hardcoded CDN URLs for latest year placement masterclass
+const p26_1_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1794819174752.jpg`;
+const p26_1_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1794819174752.jpg`;
 
-const p26_2_face = driveAsset('placement_masterclass/batch_26/face/1794215442354.jpg');
-const p26_2_pmc = driveAsset('placement_masterclass/batch_26/1794215442354.jpg');
+const p26_2_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1794215442354.jpg`;
+const p26_2_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1794215442354.jpg`;
 
-const p26_3_face = driveAsset('placement_masterclass/batch_26/face/1789367619332.jpg');
-const p26_3_pmc = driveAsset('placement_masterclass/batch_26/1789367619332.jpg');
+const p26_3_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1789367619332.jpg`;
+const p26_3_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1789367619332.jpg`;
 
-const p26_4_face = driveAsset('placement_masterclass/batch_26/face/1789964351609.jpg');
-const p26_4_pmc = driveAsset('placement_masterclass/batch_26/1789964351609.jpg');
+const p26_4_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1789964351609.jpg`;
+const p26_4_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1789964351609.jpg`;
 
-const p26_5_face = driveAsset('placement_masterclass/batch_26/face/1790583463713.jpg');
-const p26_5_pmc = driveAsset('placement_masterclass/batch_26/1790583463713.jpg');
+const p26_5_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1790583463713.jpg`;
+const p26_5_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1790583463713.jpg`;
 
-const p26_6_face = driveAsset('placement_masterclass/batch_26/face/1792390495435.jpg');
-const p26_6_pmc = driveAsset('placement_masterclass/batch_26/1792390495435.jpg');
+const p26_6_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1792390495435.jpg`;
+const p26_6_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1792390495435.jpg`;
 
-const p26_7_face = driveAsset('placement_masterclass/batch_26/face/1792993222416.jpg');
-const p26_7_pmc = driveAsset('placement_masterclass/batch_26/1792993222416.jpg');
+const p26_7_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1792993222416.jpg`;
+const p26_7_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1792993222416.jpg`;
 
-const p26_8_face = driveAsset('placement_masterclass/batch_26/face/1793603918239.jpg');
-const p26_8_pmc = driveAsset('placement_masterclass/batch_26/1793603918239.jpg');
+const p26_8_face = `${CDN_BASE}/placement_masterclass/batch_26/face/1793603918239.jpg`;
+const p26_8_pmc = `${CDN_BASE}/placement_masterclass/batch_26/1793603918239.jpg`;
 
-// Company logos (burned in)
-const optum = driveAsset('placement_masterclass/company_logo/optum.jpg');
-const atlassian = driveAsset('placement_masterclass/company_logo/atlassian.jpg');
-const ubs = driveAsset('placement_masterclass/company_logo/ubs.jpg');
-const bny = driveAsset('placement_masterclass/company_logo/bny_mellon.jpg');
-const tekion = driveAsset('placement_masterclass/company_logo/tekion.png');
-const visa = driveAsset('placement_masterclass/company_logo/visa.png');
+// Company logos (hardcoded CDN URLs)
+const optum = `${CDN_BASE}/placement_masterclass/company_logo/optum.jpg`;
+const atlassian = `${CDN_BASE}/placement_masterclass/company_logo/atlassian.jpg`;
+const ubs = `${CDN_BASE}/placement_masterclass/company_logo/ubs.jpg`;
+const bny = `${CDN_BASE}/placement_masterclass/company_logo/bny_mellon.jpg`;
+const tekion = `${CDN_BASE}/placement_masterclass/company_logo/tekion.png`;
+const visa = `${CDN_BASE}/placement_masterclass/company_logo/visa.png`;
 
 //batch25
 const png1 = driveAsset('placement_masterclass/batch_25/1.png');
